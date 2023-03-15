@@ -2,11 +2,8 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "https://pantomime.iran.liara.run",
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
-  },
-  withCredentials:true
+
+  withCredentials: true,
 });
 
 // axiosInstance.interceptors.request.use((config) => {
