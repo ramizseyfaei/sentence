@@ -2,7 +2,6 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "https://pantomime.iran.liara.run",
-
   withCredentials: true,
 });
 
