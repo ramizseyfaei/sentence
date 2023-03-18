@@ -34,19 +34,6 @@ function classNames(...classes) {
 
 export default function Example() {
   const submitHandle = async () => {
-    fetch("https://pantomime.iran.liara.run/user/login", {
-      method: "POST",
-      body: {
-        username: "aliiii",
-        password: "Ali1",
-      },
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        accept: "application/json, text/plain, */*",
-        "content-type": "application/json",
-      },
-    });
     const response = userlogin({
       username: "aliiii",
       password: "Ali1",
