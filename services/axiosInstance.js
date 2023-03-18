@@ -2,6 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "https://api.prorobo.ir",
+  Credentials: 'include'
 });
 
 // axiosInstance.interceptors.request.use((config) => {
