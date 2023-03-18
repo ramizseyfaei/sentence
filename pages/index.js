@@ -6,6 +6,7 @@ import {
   categoryall,
   userregister,
   userlogin,
+  sentenceadd,
 } from "../services/registerService";
 
 const user = {
@@ -33,14 +34,36 @@ function classNames(...classes) {
 
 export default function Example() {
   const submitHandle = async () => {
+    fetch("https://pantomime.iran.liara.run/user/login", {
+      method: "POST",
+      body: {
+        username: "aliiii",
+        password: "Ali1",
+      },
+      credentials: "include",
+      mode: "cors",
+      headers: {
+        accept: "application/json, text/plain, */*",
+        "content-type": "application/json",
+      },
+    });
     const response = userlogin({
-      username: "string",
-      password: "string",
+      username: "aliiii",
+      password: "Ali1",
     });
   };
 
   const submit2Handle = async () => {
     const response = categoryall();
+  };
+
+  const submit3Handle = async () => {
+    const response = sentenceadd({
+      title: "string",
+      text: "string",
+      category: "string",
+      hardship: "string",
+    });
   };
 
   return (
@@ -102,11 +125,11 @@ export default function Example() {
                         <div>
                           <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="sr-only">Open user menu</span>
-                            <img
+                            {/* <img
                               className="h-8 w-8 rounded-full"
                               src={user.imageUrl}
                               alt=""
-                            />
+                            /> */}
                           </Menu.Button>
                         </div>
                         <Transition
@@ -255,6 +278,12 @@ export default function Example() {
               className="bg-red-900 w-40 h-16 text-2xl text-slate-300 rounded-xl hover:bg-red-500"
             >
               Api
+            </button>
+            <button
+              onClick={submit3Handle}
+              className="bg-red-900 w-40 h-16 text-2xl text-slate-300 rounded-xl hover:bg-red-500"
+            >
+              Add
             </button>
           </div>
         </main>

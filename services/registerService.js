@@ -15,3 +15,7 @@ export function userregister(postData) {
 export function userlogin(postData) {
     return axiosInstance.post(`/user/login`,postData);
 }
+
+export function sentenceadd(postData) {
+    return axiosInstance.post(`/sentence/add`,postData);
+}
