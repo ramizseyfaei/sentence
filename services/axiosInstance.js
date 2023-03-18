@@ -5,6 +5,9 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
+
+
+
 // axiosInstance.interceptors.request.use((config) => {
 
 //     const token =typeof window !== 'undefined' && localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails'))['token'] : '';
