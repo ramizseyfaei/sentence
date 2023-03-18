@@ -34,10 +34,23 @@ function classNames(...classes) {
 
 export default function Example() {
   const submitHandle = async () => {
-    const response = userlogin({
-      username: "aliiii",
-      password: "Ali1",
+    fetch("https://api.prorobo.ir/user/login", {
+      method: "POST",
+      body: {
+        username: "aliiii",
+        password: "Ali1",
+      },
+      credentials: "include",
+      mode: "cors",
+      headers: {
+        accept: "application/json, text/plain, */*",
+        "content-type": "application/json",
+      },
     });
+    // const response = userlogin({
+    //   username: "aliiii",
+    //   password: "Ali1",
+    // });
   };
 
   const submit2Handle = async () => {
